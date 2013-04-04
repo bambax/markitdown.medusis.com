@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>Mark It Down: convert rich text to Markdown</title>
+	<link	rel="stylesheet" type="text/css"
+		href="css/main.css"/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+<!-- start Mixpanel --><!--<script type="text/javascript">var mpq=[];mpq.push(["init","f0f6cf5a95b150c3bf7e4f7718fdbcdc"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
+</script>--><!-- end Mixpanel -->
+	</head>
+<body>
+<div id="wrapper">
+
+	<div id="header">
+		<div id="logoContainer" class="center_blocks_width">
+			<div id="logo"><img src="img/markitdown.png" border="0" alt="Mark It Down"/></div>
+			</div>
+		</div>
+
+	<div id="tabs" class="center_blocks_width">
+		<div id="tabs-3">
+			<div id="converterContainer">
+				<div id="converter_source_help">Paste or drag and drop rich content from a webpage <strong>or a text editor</strong>
+				in the first box (<i>no HTML tags should be visible</i>), then press "Convert" to convert
+				to Markdown.</div>
+				<div id="converter_source" contenteditable="true" class="converterSource converter"></div>
+				<div id="buttonContainer" style="text-align: center; padding: 15px;">
+					<input type="submit" name="convert_html2mk" id="convert_html2mk" value="Convert to markdown" class="button"/>
+					<input type="submit" id="convert_raz" value="Clear" class="button"/>
+					</div>
+				<textarea id="converter_result" class="converterResult converter" disabled="disabled"></textarea>
+				</div>
+			</div>
+		</div>
+	<div id="status" class="hidden"></div>
+	<div class="push"></div>
+        </div>
+
+<div id="footer">
+	<ul>
+		<li>Mark It Down</li>
+		<li>&bull;</li>
+		<li><a href="mailto:medusis+markitdown@gmail.com" class="click">email</a></li>
+		<li>&bull;</li>
+		<li><a href="http://medusis.com" class="click">Medusis</a></li>
+		</ul>
+	</div>
+
+<script src="js/converter.js"></script>
+<!--
+<script src="saxon-ce-alpha-0.3/Saxonce.nocache.js"></script>
+-->
+<script src="Saxonce/Saxonce.nocache.js"></script>
+<script type="application/xslt+xml" language="xslt2.0" src="xsl/html2mk.xsl" data-initial-template="start"></script>
+
+</body>
+</html>
